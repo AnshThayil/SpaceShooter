@@ -14,7 +14,7 @@
 
 ![Screenshot!](https://github.com/AnshThayil/SpaceShooter/blob/master/screenshot.png)
 
-## Installation ##
+## Installation:
 
 1. Install [Python 3](https://www.python.org).
 2. Install [Pyxel](https://github.com/kitao/pyxel) using their instructions.
