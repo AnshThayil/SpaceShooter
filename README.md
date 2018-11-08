@@ -1,5 +1,5 @@
 # SpaceShooter
-## A [Pyxel] (https://github.com/kitao/pyxel) implementation of a space shooter game.##
+## A [Pyxel](https://github.com/kitao/pyxel) implementation of a space shooter game.##
 
 ## Controls:##
 **←**: Move Left.
