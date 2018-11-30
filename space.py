@@ -36,6 +36,8 @@ class Space:
 
     def reset(self):
         self.location = START
+        pyxel.play(ch = 0, snd = 2, loop = True)
+        pyxel.play(ch = 1, snd = 3, loop = True)
         self.user_bullet_location = []
         self.bullet_key = 0
         self.enemy_bullet_location = []
@@ -70,7 +72,7 @@ class Space:
 
         if pyxel.btn(pyxel.KEY_Q):
             pyxel.quit()
-        elif pyxel.btn(pyxel.KEY_R):
+        elif pyxel.btnp(pyxel.KEY_R):
             self.reset()
 
     def update_location(self):
@@ -122,14 +124,17 @@ class Space:
             for j in self.enemy_locations:
                 if (i.x >= j.x and i.x <= j.x + 9) and (i.y >= j.y and i.y <= j.y + 11):
                     self.enemy_locations.remove(j)
+                    pyxel.play(ch = 3, snd = 1)
                     self.score += 1
                     self.generate_enemy()
 
     def check_death_user(self):
         for i in self.enemy_bullet_location:
             if (i.x >= self.location.x and i.x <= self.location.x + 9) and (i.y >= self.location.y and i.y <= self.location.y + 11):
+                pyxel.play(ch = 3, snd = 0)
+                pyxel.stop(0)
+                pyxel.stop(1)
                 self.death = True
-
     #Draw Logic.
     def draw(self):
         if not self.death:
